@@ -6,29 +6,26 @@ import javax.persistence.*;
 @Table(name = "profile")
 public class Profile {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
     private String firstname;
     private String lastname;
     private int phone;
-    private String fkuser;
-
-//    @OneToMany
-//    @JoinColumn(name = "profile_id")
-//    private Set<User> users = new HashSet<>();
-//    @ManyToOne
-//    @JsonBackReference
-//    private User user;
+    private String mail;
+    private String password;
+    private String role;
 
     public Profile() {
     }
 
-    public Profile(String firstname, String lastname, int phone, String fkuser, Users user) {
+    public Profile(String firstname, String lastname, int phone, String mail, String password, String role) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.phone = phone;
-        this.fkuser = fkuser;
+        this.mail = mail;
+        this.password = password;
+        this.role = role;
     }
 
     public int getId() {
@@ -63,14 +60,29 @@ public class Profile {
         this.phone = phone;
     }
 
-    public String getFkuser() {
-        return fkuser;
+    public String getMail() {
+        return mail;
     }
 
-    public void setFkuser(String fkuser) {
-        this.fkuser = fkuser;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     @Override
     public String toString() {
@@ -79,7 +91,9 @@ public class Profile {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", phone=" + phone +
-                ", fkuser='" + fkuser + '\'' +
+                ", mail='" + mail + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }
