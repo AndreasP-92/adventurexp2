@@ -1,15 +1,14 @@
 package backendadventurexp.demo.controller;
 
+import backendadventurexp.demo.model.Booking;
 import backendadventurexp.demo.model.Profile;
 import backendadventurexp.demo.repository.ProfileRepository;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
 public class ProfileController {
     ProfileRepository profileRepository;
 
@@ -23,7 +22,12 @@ public class ProfileController {
         return profiles;
     }
 
+    @GetMapping("/select/all/profiles/{mail}")
+    public List findAllProfilesWMail(@PathVariable String mail){
+        List<Profile> profileList = profileRepository.findByMail(mail);
 
+        return profileList;
+    }
 
     @PostMapping(value = "/insert/profile", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)

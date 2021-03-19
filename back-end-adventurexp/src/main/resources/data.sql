@@ -1,5 +1,5 @@
-
-INSERT INTO booking (firstname, phone, datetime, activity, paid) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00);
+INSERT INTO booking (firstname, phone, datetime, activity, paid, lastname, context,duration, mail, guests) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00,'lorenzen', 'context', 'duration', 'and@and', 6);
+-- INSERT INTO booking (firstname, phone, datetime, activity, paid) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00);
 -- INSERT INTO activity (activity_name, activity_avail_start, activity_avail_end, activity_min_age, activity_group_size, activity_desc, activity_pic) VALUES ('Black Death', '22-22-22', '30-30-30', '18', '10', 'Description here', '/images/events/Gokart.jpg');
 -- INSERT INTO activity (activity_name, activity_avail_start, activity_avail_end, activity_min_age, activity_group_size, activity_desc, activity_pic) VALUES ('Bowling', '22-22-22', '30-30-30', '18', '10', 'Description here', '/images/events/Paintball.jpg');
 INSERT INTO activity (name, starts, ends, age, size, description, pic) VALUES ('Paintball', '22-22-22', '30-30-30', '18', '10', 'Description here', '/images/events/Paintball.jpg');
