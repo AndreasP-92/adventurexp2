@@ -24,6 +24,13 @@ public class BookingController {
         return bookings;
     }
 
+    @GetMapping("/select/booking/{mail}")
+    public List findAllBookingsWMail(@PathVariable String mail){
+        List<Booking> bookingList = bookingRepository.findByMail(mail);
+
+        return bookingList;
+    }
+
 
     @PostMapping(value="/insert/booking", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
