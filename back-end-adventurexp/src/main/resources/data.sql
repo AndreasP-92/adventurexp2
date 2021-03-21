@@ -13,4 +13,5 @@ INSERT INTO activity (name, starts, ends, age, size, description, pic) VALUES ('
 -- INSERT INTO user (user_mail, user_password, user_enabled) VALUES ('dd@dd.dk', '123','1');
 
 INSERT INTO profile (firstname, lastname, phone, mail, password, role) VALUES ('firstname', 'lastname', 22, 'and@and', 'password', 'role');
-
+INSERT INTO auth (mail, role) VALUES ('and@and', 'ROLE_ADMIN');
+INSERT INTO users (enabled, mail, password) VALUES (1, 'and@and', '123');

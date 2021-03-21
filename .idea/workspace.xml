@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fd6265d-44de-475a-b612-6743bd7bc518" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end-adventurexp/src/main/java/backendadventurexp/demo/repository/BookingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end-adventurexp/src/main/java/backendadventurexp/demo/repository/ProfileAboutRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end-adventurexp/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/src/main/java/adventurexpbackend/demo/FrontEndAdventureXpApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-adventure-xp/src/test/java/adventurexpbackend/demo/FrontEndAdventureXpApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-adventure-xp/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end-adventurexp/src/main/java/backendadventurexp/demo/model/Auth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end-adventurexp/src/main/java/backendadventurexp/demo/model/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end-adventurexp/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/back-end-adventurexp/src/main/resources/data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/back-end-adventurexp" />
   </component>
   <component name="RunManager">
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -66,10 +46,17 @@
       <option name="presentableId" value="Default" />
       <updated>1616151331966</updated>
       <workItem from="1616151339466" duration="653000" />
+      <workItem from="1616342662398" duration="14000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1180" y="536" key="FileChooserDialogImpl" timestamp="1616342673414">
+      <screen x="-1920" y="261" width="1920" height="1040" />
+    </state>
+    <state x="-1180" y="536" key="FileChooserDialogImpl/0.0.2560.1400/-1920.261.1920.1040@-1920.261.1920.1040" timestamp="1616342673414" />
   </component>
 </project>
