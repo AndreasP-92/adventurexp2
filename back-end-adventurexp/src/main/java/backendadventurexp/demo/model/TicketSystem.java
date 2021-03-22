@@ -9,7 +9,6 @@ public class TicketSystem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ticket_id;
 
-    private String owner;
     private String context;
     private String timeStamp;
     private String firstname;
@@ -26,8 +25,7 @@ public class TicketSystem {
     public TicketSystem() {
     }
 
-    public TicketSystem(String owner, String context, String timeStamp, String firstname, String lastname, String mail, int ticket_active, int ticket_taken) {
-        this.owner = owner;
+    public TicketSystem(String context, String timeStamp, String firstname, String lastname, String mail, int ticket_active, int ticket_taken) {
         this.context = context;
         this.timeStamp = timeStamp;
         this.firstname = firstname;
@@ -43,14 +41,6 @@ public class TicketSystem {
 
     public void setTicket_id(int ticket_id) {
         this.ticket_id = ticket_id;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
     }
 
     public String getContext() {
@@ -113,7 +103,6 @@ public class TicketSystem {
     public String toString() {
         return "TicketSystem{" +
                 "ticket_id=" + ticket_id +
-                ", owner='" + owner + '\'' +
                 ", context='" + context + '\'' +
                 ", timeStamp='" + timeStamp + '\'' +
                 ", firstname='" + firstname + '\'' +
