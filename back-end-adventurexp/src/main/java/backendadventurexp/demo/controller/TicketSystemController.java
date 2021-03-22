@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class SystemTicketController {
+public class TicketSystemController {
 
     private final TicketSystemRepository ticketSystemRepository;
 
-    public SystemTicketController(TicketSystemRepository ticketSystemRepository) {
+    public TicketSystemController(TicketSystemRepository ticketSystemRepository) {
         this.ticketSystemRepository = ticketSystemRepository;
     }
 

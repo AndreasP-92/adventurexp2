@@ -36,4 +36,13 @@ public class UserController {
 
         return authRepository.save(auth);
     }
+
+    // === INSERT ONE PROFILE ===
+//    @PostMapping(value = "/insert/profile/about", consumes = "application/json")
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public Users insertProfileAboutInfo(@RequestBody Users users) {
+//        System.out.println(users);
+//
+//        return userRepository.(users);
+//    }
 }
