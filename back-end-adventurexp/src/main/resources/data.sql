@@ -15,3 +15,5 @@ INSERT INTO activity (name, starts, ends, age, size, description, pic) VALUES ('
 INSERT INTO profile (firstname, lastname, phone, mail, password, role) VALUES ('firstname', 'lastname', 22, 'and@and', 'password', 'role');
 INSERT INTO auth (mail, role) VALUES ('and@and', 'ROLE_ADMIN');
 INSERT INTO users (enabled, mail, password) VALUES (1, 'and@and', '123');
+
+INSERT INTO ticket_system(context, firstname, lastname, mail, ticket_active, ticket_taken, time_stamp) VALUES ('something something', 'firstname', 'lastname', 'mail', '1', '0', '00:00:21');
