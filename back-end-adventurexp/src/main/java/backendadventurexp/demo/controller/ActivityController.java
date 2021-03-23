@@ -30,11 +30,26 @@ public class ActivityController {
         return activities;
     }
 
+    @GetMapping("/select/activity/{name}")
+    public Activity getOneActivityWName(@PathVariable String name){
+        Activity activity = activityRepository.findByName(name);
+
+        return activity;
+    }
+
     @GetMapping("/select/durations")
     public List<Duration> getDurations(){
         List<Duration> durations = durationRepository.findAll();
 
         return durations;
+    }
+
+    @PostMapping(value="/insert/duration", consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Duration insertDuration(@RequestBody Duration duration){
+
+        return durationRepository.save(duration);
+
     }
 
     @PostMapping(value="/insert/activity", consumes = "application/json")

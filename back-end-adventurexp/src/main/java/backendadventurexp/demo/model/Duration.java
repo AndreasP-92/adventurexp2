@@ -1,38 +1,32 @@
 package backendadventurexp.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 public class Duration {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int durationid;
-    int duration;
-
-    @ManyToMany
-    @JoinTable(
-            name = "activity_duration",
-            joinColumns = @JoinColumn(name = "duration"),
-            inverseJoinColumns = @JoinColumn(name = "activity_id")
-    )
-    Set<Activity> activityname;
+    @GeneratedValue
+    private int id;
+    private int duration;
+    private String activityName;
 
     public Duration() {
     }
 
-    public Duration(int duration, Set<Activity> activityname) {
+    public Duration(int duration, String activityName) {
         this.duration = duration;
-        this.activityname = activityname;
+        this.activityName = activityName;
     }
 
-    public int getDurationid() {
-        return durationid;
+    public int getId() {
+        return id;
     }
 
-    public void setDurationid(int durationid) {
-        this.durationid = durationid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getDuration() {
@@ -43,20 +37,20 @@ public class Duration {
         this.duration = duration;
     }
 
-    public Set<Activity> getActivityname() {
-        return activityname;
+    public String getActivityName() {
+        return activityName;
     }
 
-    public void setActivityname(Set<Activity> activityname) {
-        this.activityname = activityname;
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
     }
 
     @Override
     public String toString() {
         return "Duration{" +
-                "durationid=" + durationid +
+                "id=" + id +
                 ", duration=" + duration +
-                ", activityname=" + activityname +
+                ", activityName='" + activityName + '\'' +
                 '}';
     }
 }

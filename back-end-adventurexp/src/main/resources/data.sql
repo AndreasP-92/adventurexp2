@@ -17,6 +17,6 @@ INSERT INTO auth (mail, role) VALUES ('and@and', 'ROLE_ADMIN');
 INSERT INTO users (enabled, mail, password) VALUES (1, 'and@and', '123');
 
 INSERT INTO ticket_system(context, firstname, lastname, mail, ticket_active, ticket_taken, time_stamp) VALUES ('something something', 'firstname', 'lastname', 'mail', '1', '0', '00:00:21');
-INSERT INTO duration(duration) VALUES (12);
-INSERT INTO duration(duration) VALUES (24);
-INSERT INTO duration(duration) VALUES (48);
+-- INSERT INTO duration(duration) VALUES (12);
+-- INSERT INTO duration(duration) VALUES (24);
+-- INSERT INTO duration(duration) VALUES (48);
