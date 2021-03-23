@@ -1,16 +1,17 @@
 package backendadventurexp.demo.controller;
 
+
+
 import backendadventurexp.demo.model.Auth;
-import backendadventurexp.demo.model.Profile;
 import backendadventurexp.demo.model.Users;
 import backendadventurexp.demo.repository.AuthRepository;
 import backendadventurexp.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -37,12 +38,40 @@ public class UserController {
         return authRepository.save(auth);
     }
 
-    // === INSERT ONE PROFILE ===
-//    @PostMapping(value = "/insert/profile/about", consumes = "application/json")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Users insertProfileAboutInfo(@RequestBody Users users) {
-//        System.out.println(users);
-//
-//        return userRepository.(users);
+    @GetMapping(value="/select/user/{mail}")
+    public Users insertBooking(@PathVariable String mail){
+        System.out.println(mail);
+
+        Users user = userRepository.findByMail(mail);
+
+        System.out.println("USER FOUND==="+user);
+
+        return user;
+    }
+
+//     === INSERT ONE PROFILE ===
+    @PostMapping(value = "/update/user", consumes = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateUserCredentinals(@RequestBody Users users) {
+        System.out.println("USERS ==="+users);
+//        Users oneUser2 = userRepository.findById(users.getId());
+        Users oneUser = userRepository.findById(users.getId());
+        oneUser.setMail(users.getMail());
+        if(users.getPassword() != null){
+            oneUser.setPassword(users.getPassword());
+        }
+        System.out.println("ONE USER ==="+oneUser);
+        userRepository.save(oneUser);
+
+//        oneUser.set
+    }
+
+//    public void updateUser(Userinfos u) {
+//        User userFromDb = userRepository.findById(u.getid());
+//        // crush the variables of the object found
+//        userFromDb.setFirstname("john");
+//        userFromDb.setLastname("dew");
+//        userFromDb.setAge(16);
+//        userRepository.save(userFromDb);
 //    }
 }

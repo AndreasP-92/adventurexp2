@@ -1,9 +1,7 @@
 package backendadventurexp.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Activity {
@@ -17,14 +15,21 @@ public class Activity {
     public String size;
     public String description;
     public String pic;
-    public String duration;
     public String price;
     public String practicalinfo;
+
+    @ManyToMany
+    @JoinTable(
+        name = "activity_duration",
+        joinColumns = @JoinColumn(name = "id"),
+        inverseJoinColumns = @JoinColumn(name = "duration")
+    )
+    Set<Duration> duration;
 
     public Activity() {
     }
 
-    public Activity(String name, String starts, String ends, String age, String size, String description, String pic, String duration, String price, String practicalinfo) {
+    public Activity(String name, String starts, String ends, String age, String size, String description, String pic, String price, String practicalinfo) {
         this.name = name;
         this.starts = starts;
         this.ends = ends;
@@ -32,7 +37,6 @@ public class Activity {
         this.size = size;
         this.description = description;
         this.pic = pic;
-        this.duration = duration;
         this.price = price;
         this.practicalinfo = practicalinfo;
     }
@@ -101,14 +105,6 @@ public class Activity {
         this.pic = pic;
     }
 
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
     public String getPrice() {
         return price;
     }
@@ -136,7 +132,6 @@ public class Activity {
                 ", size='" + size + '\'' +
                 ", description='" + description + '\'' +
                 ", pic='" + pic + '\'' +
-                ", duration='" + duration + '\'' +
                 ", price='" + price + '\'' +
                 ", practicalInfo='" + practicalinfo + '\'' +
                 '}';

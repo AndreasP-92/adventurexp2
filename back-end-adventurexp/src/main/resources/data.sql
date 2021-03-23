@@ -2,7 +2,7 @@ INSERT INTO booking (firstname, phone, datetime, activity, paid, lastname, conte
 -- INSERT INTO booking (firstname, phone, datetime, activity, paid) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00);
 -- INSERT INTO activity (activity_name, activity_avail_start, activity_avail_end, activity_min_age, activity_group_size, activity_desc, activity_pic) VALUES ('Black Death', '22-22-22', '30-30-30', '18', '10', 'Description here', '/images/events/Gokart.jpg');
 -- INSERT INTO activity (activity_name, activity_avail_start, activity_avail_end, activity_min_age, activity_group_size, activity_desc, activity_pic) VALUES ('Bowling', '22-22-22', '30-30-30', '18', '10', 'Description here', '/images/events/Paintball.jpg');
-INSERT INTO activity (name, starts, ends, age, size, description, pic, duration, price, practicalinfo) VALUES ('Paintball', '22-22-22', '30-30-30', '18', '10', 'Description here', '/images/events/Paintball.jpg', '12 timer', 1500.00, 'Medbring egen heldragt');
+INSERT INTO activity (name, starts, ends, age, size, description, pic, price, practicalinfo) VALUES ('Paintball', '22-22-22', '30-30-30', '18', '10', 'Description here', '/images/events/Paintball.jpg', 1500.00, 'Medbring egen heldragt');
 --
 -- INSERT INTO booking (booking_name, booking_phone, booking_datetime, booking_activity, booking_paid) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00);
 
@@ -17,3 +17,6 @@ INSERT INTO auth (mail, role) VALUES ('and@and', 'ROLE_ADMIN');
 INSERT INTO users (enabled, mail, password) VALUES (1, 'and@and', '123');
 
 INSERT INTO ticket_system(context, firstname, lastname, mail, ticket_active, ticket_taken, time_stamp) VALUES ('something something', 'firstname', 'lastname', 'mail', '1', '0', '00:00:21');
+INSERT INTO duration(duration) VALUES (12);
+INSERT INTO duration(duration) VALUES (24);
+INSERT INTO duration(duration) VALUES (48);
