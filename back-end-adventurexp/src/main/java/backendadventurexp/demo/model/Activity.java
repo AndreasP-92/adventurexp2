@@ -8,6 +8,7 @@ public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
+    @Column(name = "activity_name")
     public String name;
     public String starts;
     public String ends;
@@ -17,14 +18,6 @@ public class Activity {
     public String pic;
     public String price;
     public String practicalinfo;
-
-    @ManyToMany
-    @JoinTable(
-        name = "activity_duration",
-        joinColumns = @JoinColumn(name = "id"),
-        inverseJoinColumns = @JoinColumn(name = "duration")
-    )
-    Set<Duration> duration;
 
     public Activity() {
     }
