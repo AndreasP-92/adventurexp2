@@ -49,7 +49,7 @@ public class UserController {
         return user;
     }
 
-//     === INSERT ONE PROFILE ===
+//     === UPDATE ONE PROFILE ===
     @PostMapping(value = "/update/user", consumes = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public void updateUserCredentinals(@RequestBody Users users) {
