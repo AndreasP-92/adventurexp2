@@ -1,5 +1,7 @@
 package backendadventurexp.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.sql.Date;
 //import java.util.Date;
@@ -10,9 +12,11 @@ public class Activity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
     public String name;
+    @JsonFormat(pattern = "yyyy M dd")
 //    @Temporal(TemporalType.DATE)
 //    @DateTimeFormat(pattern = "dd-MM-yyyy")
     public Date starts;
+    @JsonFormat(pattern = "yyyy M dd")
 //    @Temporal(TemporalType.DATE)
 //    @DateTimeFormat(pattern = "dd-MM-yyyy")
     public Date ends;
