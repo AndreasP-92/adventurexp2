@@ -19,11 +19,12 @@ public class Activity {
     public String pic;
     public String price;
     public String practicalinfo;
+    public String subheading;
 
     public Activity() {
     }
 
-    public Activity(String name, Timestamp starts, Timestamp ends, String age, String size, String description, String pic, String price, String practicalinfo) {
+    public Activity(String name, Timestamp starts, Timestamp ends, String age, String size, String description, String pic, String price, String practicalinfo, String subheading) {
         this.name = name;
         this.starts = starts;
         this.ends = ends;
@@ -33,6 +34,7 @@ public class Activity {
         this.pic = pic;
         this.price = price;
         this.practicalinfo = practicalinfo;
+        this.subheading = subheading;
     }
 
     public int getId() {
@@ -115,6 +117,14 @@ public class Activity {
         this.practicalinfo = practicalinfo;
     }
 
+    public String getSubheading() {
+        return subheading;
+    }
+
+    public void setSubheading(String subheading) {
+        this.subheading = subheading;
+    }
+
     @Override
     public String toString() {
         return "Activity{" +
@@ -128,6 +138,7 @@ public class Activity {
                 ", pic='" + pic + '\'' +
                 ", price='" + price + '\'' +
                 ", practicalinfo='" + practicalinfo + '\'' +
+                ", subheading='" + subheading + '\'' +
                 '}';
     }
 }
