@@ -43,6 +43,13 @@ public class ActivityController {
 
         return durations;
     }
+    @GetMapping("/select/all/events/{name}")
+    public List<Activity> getAllEventsWName(@PathVariable String name){
+        System.out.println(name);
+        List<Activity> activities = activityRepository.findAllByName(name);
+
+        return activities;
+    }
 
     @PostMapping(value="/insert/duration", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
