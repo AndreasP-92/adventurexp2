@@ -1,6 +1,8 @@
 package backendadventurexp.demo.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -8,21 +10,21 @@ public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
-    @Column(name = "activity_name")
     public String name;
-    public String starts;
-    public String ends;
+    public Timestamp starts;
+    public Timestamp ends;
     public String age;
     public String size;
     public String description;
     public String pic;
     public String price;
     public String practicalinfo;
+    public String subheading;
 
     public Activity() {
     }
 
-    public Activity(String name, String starts, String ends, String age, String size, String description, String pic, String price, String practicalinfo) {
+    public Activity(String name, Timestamp starts, Timestamp ends, String age, String size, String description, String pic, String price, String practicalinfo, String subheading) {
         this.name = name;
         this.starts = starts;
         this.ends = ends;
@@ -32,6 +34,7 @@ public class Activity {
         this.pic = pic;
         this.price = price;
         this.practicalinfo = practicalinfo;
+        this.subheading = subheading;
     }
 
     public int getId() {
@@ -50,19 +53,19 @@ public class Activity {
         this.name = name;
     }
 
-    public String getStarts() {
+    public Timestamp getStarts() {
         return starts;
     }
 
-    public void setStarts(String starts) {
+    public void setStarts(Timestamp starts) {
         this.starts = starts;
     }
 
-    public String getEnds() {
+    public Timestamp getEnds() {
         return ends;
     }
 
-    public void setEnds(String ends) {
+    public void setEnds(Timestamp ends) {
         this.ends = ends;
     }
 
@@ -110,8 +113,16 @@ public class Activity {
         return practicalinfo;
     }
 
-    public void setPracticalinfo(String practicalInfo) {
-        this.practicalinfo = practicalInfo;
+    public void setPracticalinfo(String practicalinfo) {
+        this.practicalinfo = practicalinfo;
+    }
+
+    public String getSubheading() {
+        return subheading;
+    }
+
+    public void setSubheading(String subheading) {
+        this.subheading = subheading;
     }
 
     @Override
@@ -119,14 +130,15 @@ public class Activity {
         return "Activity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", starts='" + starts + '\'' +
-                ", ends='" + ends + '\'' +
+                ", starts=" + starts +
+                ", ends=" + ends +
                 ", age='" + age + '\'' +
                 ", size='" + size + '\'' +
                 ", description='" + description + '\'' +
                 ", pic='" + pic + '\'' +
                 ", price='" + price + '\'' +
-                ", practicalInfo='" + practicalinfo + '\'' +
+                ", practicalinfo='" + practicalinfo + '\'' +
+                ", subheading='" + subheading + '\'' +
                 '}';
     }
 }
