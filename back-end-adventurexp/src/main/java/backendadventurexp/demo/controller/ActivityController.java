@@ -19,9 +19,7 @@ public class ActivityController {
     @Autowired
     DurationRepository durationRepository;
 
-    public ActivityController(ActivityRepository activityRepository) {
-        this.activityRepository = activityRepository;
-    }
+//    ==================================================== GET PROFILES ================================================
 
     @GetMapping("/select/activities")
     public List<Activity> getActivities(){
@@ -50,6 +48,8 @@ public class ActivityController {
 
         return activities;
     }
+
+//    ==================================================== POST PROFILES ================================================
 
     @PostMapping(value="/insert/duration", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)

@@ -1,6 +1,9 @@
 package backendadventurexp.demo.controller;
 
+import backendadventurexp.demo.model.Booking;
 import backendadventurexp.demo.model.Profile;
+import backendadventurexp.demo.model.ProfileAbout;
+import backendadventurexp.demo.repository.ProfileAboutRepository;
 import backendadventurexp.demo.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -15,6 +18,7 @@ public class ProfileController {
     @Autowired
     ProfileRepository profileRepository;
 
+//    ==================================================== GET PROFILES ================================================
 
 // === GETS ALL PROFILES ===
     @GetMapping("/profiles")
@@ -30,6 +34,8 @@ public class ProfileController {
 
         return profileList;
     }
+
+    //    ==================================================== POST PROFILES ================================================
 
 // === INSERT ONE PROFILE ===
     @PostMapping(value = "/insert/profile", consumes = "application/json")
@@ -49,6 +55,7 @@ public class ProfileController {
         return profileRepository.save(profile);
     }
 
+    //    ==================================================== DELETE PROFILES ================================================
 // === DELETE ONE PROFILE ===
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     @DeleteMapping("/delete/profile/about/{user_id}")
@@ -59,4 +66,6 @@ public class ProfileController {
             System.out.println("ERROR DELETING =" + ex.getMessage());
         }
     }
+
+
 }

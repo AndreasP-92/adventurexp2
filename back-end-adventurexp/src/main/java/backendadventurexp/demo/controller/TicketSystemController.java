@@ -17,11 +17,15 @@ public class TicketSystemController {
         this.ticketSystemRepository = ticketSystemRepository;
     }
 
+//    ==================================================== GET PROFILES ================================================
+
     @GetMapping("/select/ticket/system")
     public List<TicketSystem> findAllTickets(){
         List<TicketSystem> ticketSystems = ticketSystemRepository.findAll();
         return ticketSystems;
     }
+
+//    ==================================================== POST PROFILES ================================================
 
     @PostMapping(value="/tickets", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
@@ -37,6 +41,8 @@ public class TicketSystemController {
 
         return ticketSystemRepository.save(insertTicket);
     }
+
+//    ==================================================== DELETE PROFILES ================================================
 
     @ResponseStatus(code=HttpStatus.NO_CONTENT)
     @DeleteMapping("/delete/ticket/{ticket_id}")

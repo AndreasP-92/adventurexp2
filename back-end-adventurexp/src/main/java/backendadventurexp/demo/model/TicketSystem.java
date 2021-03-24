@@ -8,19 +8,15 @@ public class TicketSystem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ticket_id;
-
     private String context;
     private String timeStamp;
     private String firstname;
     private String lastname;
     private String mail;
-
     @Column(name="ticket_active", nullable = false, columnDefinition="INT NOT NULL DEFAULT 1")
     private int ticket_active;
     @Column(name="ticket_taken", columnDefinition="INT default 0")
     private int ticket_taken ;
-
-
 
     public TicketSystem() {
     }
