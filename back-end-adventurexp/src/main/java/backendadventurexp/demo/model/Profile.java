@@ -3,11 +3,9 @@ package backendadventurexp.demo.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "profile")
 public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
     private String firstname;
     private String lastname;
