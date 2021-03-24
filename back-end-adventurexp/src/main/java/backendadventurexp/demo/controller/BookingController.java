@@ -1,7 +1,5 @@
 package backendadventurexp.demo.controller;
 
-
-
 import backendadventurexp.demo.model.Booking;
 import backendadventurexp.demo.repository.BookingRepository;
 import org.springframework.http.HttpStatus;

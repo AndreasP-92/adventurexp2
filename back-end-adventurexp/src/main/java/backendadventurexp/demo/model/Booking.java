@@ -1,7 +1,7 @@
 package backendadventurexp.demo.model;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+
 
 @Entity
 public class Booking {
