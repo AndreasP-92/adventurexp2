@@ -1,6 +1,7 @@
 package backendadventurexp.demo.controller;
 
 import backendadventurexp.demo.model.Booking;
+import backendadventurexp.demo.model.Users;
 import backendadventurexp.demo.repository.BookingRepository;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
@@ -47,9 +48,9 @@ public class BookingController {
 
 //    =======  SELECT ALL ACTIVE BOOKINGS =====
 
-    @GetMapping("/select/active/booking/{booking_active}")
-    public List findAllBookingsActive(@PathVariable int booking_active) {
-        List<Booking> bookingActive = bookingRepository.findAllByBookingActive(booking_active);
+    @GetMapping("/select/active/booking")
+    public List findAllBookingsActive() {
+        List<Booking> bookingActive = bookingRepository.findAllByBookingActive(0);
 
         return bookingActive;
     }
@@ -66,7 +67,21 @@ public class BookingController {
         return bookingRepository.save(booking);
     }
 
-//    =======  DISABLE/ENABLE BOOKING =====
+    //     === UPDATE ONE BOOKING ===
+    @PostMapping(value = "/update/booking", consumes = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateBooking(@RequestBody Booking booking) {
+        System.out.println("BOOKING ==="+booking);
+        Booking oneBooking = bookingRepository.findByBookingId(booking.getBookingId());
+//        oneBooking.setBookingClosed(booking.getBookingActive());
+        if(oneBooking.getBookingActive() == 0){
+            oneBooking.setBookingActive(1);
+        }else{
+            System.out.println("FEJL");
+        }
+        bookingRepository.save(oneBooking);
+
+    }
 
 
 }

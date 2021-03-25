@@ -9,4 +9,5 @@ public interface BookingRepository extends JpaRepository<Booking, Integer> {
     List<Booking> findByMail(String mail);
     List<Booking> findAllByBookingClosed(int bookingClosed);
     List<Booking> findAllByBookingActive(int bookingActive);
+    Booking findByBookingId(int id);
 }

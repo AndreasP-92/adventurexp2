@@ -8,7 +8,8 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int booking_id;
+    @Column(name="booking_id")
+    private int bookingId;
     private String activity;
     private String guests;
     private String datetime;
@@ -44,12 +45,12 @@ public class Booking {
         this.bookingActive = bookingActive;
     }
 
-    public int getBooking_id() {
-        return booking_id;
+    public int getBookingId() {
+        return bookingId;
     }
 
-    public void setBooking_id(int booking_id) {
-        this.booking_id = booking_id;
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
     }
 
     public String getActivity() {
@@ -151,7 +152,7 @@ public class Booking {
     @Override
     public String toString() {
         return "Booking{" +
-                "booking_id=" + booking_id +
+                "bookingId=" + bookingId +
                 ", activity='" + activity + '\'' +
                 ", guests='" + guests + '\'' +
                 ", datetime='" + datetime + '\'' +
