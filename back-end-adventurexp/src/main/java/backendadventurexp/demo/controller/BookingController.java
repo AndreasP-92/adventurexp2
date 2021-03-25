@@ -38,9 +38,9 @@ public class BookingController {
 
 //    =======  SELECT ALL CLOSED BOOKINGS =====
 
-    @GetMapping("/select/remove/booking/{booking_closed}")
-    public List removeBooking(@PathVariable int booking_closed) {
-        List<Booking> bookingRemove = bookingRepository.findAllByBookingClosed(booking_closed);
+    @GetMapping("/select/closed/booking")
+    public List removeBooking() {
+        List<Booking> bookingRemove = bookingRepository.findAllByBookingClosed(1);
 
         return bookingRemove;
     }
@@ -66,7 +66,15 @@ public class BookingController {
         return bookingRepository.save(booking);
     }
 
-//    =======  DISABLE/ENABLE BOOKING =====
+//    @ResponseStatus(code=HttpStatus.NO_CONTENT)
+//    @DeleteMapping("/delete/booking/{booking_closed}")
+//    public void deleteTicket(@PathVariable int booking_closed){
+//        try {
+//            bookingRepository.deleteById(booking_closed);
+//        } catch (EmptyResultDataAccessException ex) {
+//            System.out.println("FEJL i DELETE =" + ex.getMessage());
+//        }
+//    }
 
 
 }
