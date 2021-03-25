@@ -16,12 +16,16 @@ public class BookingController {
         this.bookingRepository = bookingRepository;
     }
 
+    //    ==================================================== GET BOOKINGS ================================================
+
+    //    ====== SELECT ALL BOOKINGS =====
     @GetMapping("/select/bookings")
     public List<Booking> findAllBookings(){
         List<Booking> bookings = bookingRepository.findAll();
         return bookings;
     }
 
+    //    ====== SELECT SPECIFIC BOOKINGS =====
     @GetMapping("/select/booking/{mail}")
     public List findAllBookingsWMail(@PathVariable String mail){
         List<Booking> bookingList = bookingRepository.findByMail(mail);
@@ -29,6 +33,7 @@ public class BookingController {
         return bookingList;
     }
 
+    //    ====== CLOSE ONE BOOKINGS =====
     @GetMapping("/select/remove/booking/{booking_closed}")
     public List removeBooking(@PathVariable int booking_closed){
         List<Booking> bookingRemove = bookingRepository.findAllByBookingClosed(booking_closed);
@@ -36,7 +41,9 @@ public class BookingController {
         return  bookingRemove;
     }
 
+    //    ==================================================== POST BOOKINGS ================================================
 
+    //    ====== INSERT ONE BOOKING =====
     @PostMapping(value="/insert/booking", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public Booking insertBooking(@RequestBody Booking booking){
