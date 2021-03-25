@@ -20,7 +20,6 @@ public class Booking {
     private String mail;
     @Column(precision=10, scale=2)
     private String context;
-
     @Column(name="booking_closed", nullable = false, columnDefinition = "INT NOT NULL DEFAULT 1")
     private int bookingClosed;
     @Column(name="booking_active", columnDefinition = "INT DEFAULT 0")
