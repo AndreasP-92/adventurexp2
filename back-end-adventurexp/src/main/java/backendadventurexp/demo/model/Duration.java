@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Duration {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int duration;
     private String activityName;

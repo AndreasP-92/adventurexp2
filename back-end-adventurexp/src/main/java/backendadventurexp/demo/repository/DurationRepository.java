@@ -9,4 +9,5 @@ import java.util.List;
 public interface DurationRepository extends JpaRepository<Duration, Long> {
 
 //    List<Duration> findAll(String name);
+    List<Duration> findAllByActivityName(String name);
 }

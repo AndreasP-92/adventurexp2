@@ -21,6 +21,7 @@ public class ActivityController {
 
 //    ==================================================== GET PROFILES ================================================
 
+//    ====== SELECT ALL ACTIVITIES =====
     @GetMapping("/select/activities")
     public List<Activity> getActivities(){
         List<Activity> activities = activityRepository.findAll();
@@ -28,6 +29,7 @@ public class ActivityController {
         return activities;
     }
 
+//    ====== SELECT ONE ACTIVITIES =====
     @GetMapping("/select/activity/{name}")
     public Activity getOneActivityWName(@PathVariable String name){
         Activity activity = activityRepository.findByName(name);
@@ -35,18 +37,29 @@ public class ActivityController {
         return activity;
     }
 
-    @GetMapping("/select/durations")
-    public List<Duration> getDurations(){
-        List<Duration> durations = durationRepository.findAll();
-
-        return durations;
-    }
+//    ====== SELECT ALL ACTIVITIES WITH NAME =====
     @GetMapping("/select/all/events/{name}")
     public List<Activity> getAllEventsWName(@PathVariable String name){
         System.out.println(name);
         List<Activity> activities = activityRepository.findAllByName(name);
 
         return activities;
+    }
+
+//    ====== SELECT ALL DURATIONS =====
+    @GetMapping("/select/durations")
+    public List<Duration> getDurations(){
+        List<Duration> durations = durationRepository.findAll();
+
+        return durations;
+    }
+
+//    ====== SELECT ALL DURATIONS WITH NAME =====
+    @GetMapping("/select/all/durations/{activity}")
+    public List<Duration> getDurationsWName(@PathVariable String activity){
+        List<Duration> durations = durationRepository.findAllByActivityName(activity);
+
+        return durations;
     }
 
 //    ==================================================== POST PROFILES ================================================
