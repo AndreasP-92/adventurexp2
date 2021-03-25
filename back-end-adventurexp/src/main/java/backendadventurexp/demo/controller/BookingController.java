@@ -16,11 +16,17 @@ public class BookingController {
         this.bookingRepository = bookingRepository;
     }
 
+//    ==================================================== GET BOOKING ================================================
+
+//    ====== SELECT ALL BOOKINGS =====
+
     @GetMapping("/select/bookings")
     public List<Booking> findAllBookings(){
         List<Booking> bookings = bookingRepository.findAll();
         return bookings;
     }
+
+    //======== SELECT BOOKINGS WITH MAIL=====
 
     @GetMapping("/select/booking/{mail}")
     public List findAllBookingsWMail(@PathVariable String mail){
@@ -29,6 +35,8 @@ public class BookingController {
         return bookingList;
     }
 
+//    =======  SELECT BOOKING ENABLED/DISABLED =====
+
     @GetMapping("/select/remove/booking/{booking_closed}")
     public List removeBooking(@PathVariable int booking_closed){
         List<Booking> bookingRemove = bookingRepository.findAllByBookingClosed(booking_closed);
@@ -36,6 +44,9 @@ public class BookingController {
         return  bookingRemove;
     }
 
+//    ==================================================== POST BOOKING ================================================
+
+//    =======  INSERT BOOKING =====
 
     @PostMapping(value="/insert/booking", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
