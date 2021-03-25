@@ -14,22 +14,16 @@ public class Users {
     private String mail;
     private String password;
     private String enabled;
+    private String role;
 
     public Users() {
     }
 
-    public Users(String mail, String password, String enabled) {
+    public Users(String mail, String password, String enabled, String role) {
         this.mail = mail;
         this.password = password;
         this.enabled = enabled;
-    }
-
-    public String getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(String enabled) {
-        this.enabled = enabled;
+        this.role = role;
     }
 
     public int getId() {
@@ -56,6 +50,22 @@ public class Users {
         this.password = password;
     }
 
+    public String getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(String enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "Users{" +
@@ -63,6 +73,7 @@ public class Users {
                 ", mail='" + mail + '\'' +
                 ", password='" + password + '\'' +
                 ", enabled='" + enabled + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }
