@@ -5,8 +5,12 @@ import backendadventurexp.demo.model.Users;
 import backendadventurexp.demo.repository.AuthRepository;
 import backendadventurexp.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import javax.transaction.Transactional;
+import java.util.List;
 
 
 @RestController
@@ -20,7 +24,7 @@ public class UserController {
 
 //    ==================================================== GET PROFILES ================================================
 
-    //     === INSERT BOOKING ===
+    //     === SELECT BOOKING ===
     @GetMapping(value="/select/user/{mail}")
     public Users insertBooking(@PathVariable String mail){
         System.out.println(mail);
@@ -30,6 +34,30 @@ public class UserController {
         System.out.println("USER FOUND==="+user);
 
         return user;
+    }
+
+//     === INSERT BOOKING ===
+    @GetMapping(value="/search/user/{mail}/{role}")
+    public List<Users> searchUser(@PathVariable("mail") String mail, @PathVariable("role") String role){
+        System.out.println(mail);
+        System.out.println(role);
+//        http://localhost:5002/search/user/and@and&USER_ADMIN
+        List<Users> users = userRepository.findAllByMailAndRole(mail, role);
+
+        System.out.println("USER FOUND==="+users);
+
+        return users;
+    }
+
+    @GetMapping(value="/search/auth/{role}")
+    public List<Auth> searchAuth(@PathVariable String role){
+        System.out.println(role);
+
+        List<Auth> auths = authRepository.findAllByRole(role);
+
+        System.out.println("USER FOUND==="+auths);
+
+        return auths;
     }
 
 //    ==================================================== POST PROFILES ================================================
@@ -65,5 +93,18 @@ public class UserController {
         }
         System.out.println("ONE USER ==="+oneUser);
         userRepository.save(oneUser);
+    }
+
+//    ==================================================== DELETE PROFILE ================================================
+
+    @ResponseStatus(code=HttpStatus.NO_CONTENT)
+    @DeleteMapping("/delete/profile/{id}")
+    public void deleteProfile(@PathVariable int id){
+        System.out.println("ID=============="+id);
+        try {
+            userRepository.deleteById(id);
+        } catch (EmptyResultDataAccessException ex) {
+            System.out.println("FEJL i DELETE =" + ex.getMessage());
+        }
     }
 }

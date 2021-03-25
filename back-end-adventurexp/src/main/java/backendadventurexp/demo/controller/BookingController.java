@@ -1,6 +1,7 @@
 package backendadventurexp.demo.controller;
 
 import backendadventurexp.demo.model.Booking;
+import backendadventurexp.demo.model.Users;
 import backendadventurexp.demo.repository.BookingRepository;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
@@ -38,9 +39,9 @@ public class BookingController {
 
 //    =======  SELECT ALL CLOSED BOOKINGS =====
 
-    @GetMapping("/select/closed/booking")
-    public List removeBooking() {
-        List<Booking> bookingRemove = bookingRepository.findAllByBookingClosed(1);
+    @GetMapping("/select/remove/booking/{booking_closed}")
+    public List removeBooking(@PathVariable int booking_closed) {
+        List<Booking> bookingRemove = bookingRepository.findAllByBookingClosed(booking_closed);
 
         return bookingRemove;
     }
@@ -66,6 +67,21 @@ public class BookingController {
         return bookingRepository.save(booking);
     }
 
+    //     === UPDATE ONE BOOKING ===
+    @PostMapping(value = "/update/booking", consumes = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateBooking(@RequestBody Booking booking) {
+        System.out.println("BOOKING ==="+booking);
+        Booking oneBooking = bookingRepository.findByBookingId(booking.getBookingId());
+//        oneBooking.setBookingClosed(booking.getBookingActive());
+        if(oneBooking.getBookingActive() == 0){
+            oneBooking.setBookingActive(1);
+        }else{
+            System.out.println("FEJL");
+        }
+        bookingRepository.save(oneBooking);
+
+    }
 //    @ResponseStatus(code=HttpStatus.NO_CONTENT)
 //    @DeleteMapping("/delete/booking/{booking_closed}")
 //    public void deleteTicket(@PathVariable int booking_closed){
