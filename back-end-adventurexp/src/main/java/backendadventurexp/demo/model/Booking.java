@@ -22,15 +22,15 @@ public class Booking {
     private String context;
 
     @Column(name="booking_closed", nullable = false, columnDefinition = "INT NOT NULL DEFAULT 1")
-    private int booking_closed;
+    private int bookingClosed;
     @Column(name="booking_active", columnDefinition = "INT DEFAULT 0")
-    private int booking_active;
+    private int bookingActive;
 
 
     public Booking() {
     }
 
-    public Booking(String activity, String guests, String datetime, String duration, String firstname, String lastname, String paid, String phone, String mail, String context, int booking_closed, int booking_active) {
+    public Booking(String activity, String guests, String datetime, String duration, String firstname, String lastname, String paid, String phone, String mail, String context, int bookingClosed, int bookingActive) {
         this.activity = activity;
         this.guests = guests;
         this.datetime = datetime;
@@ -41,8 +41,8 @@ public class Booking {
         this.phone = phone;
         this.mail = mail;
         this.context = context;
-        this.booking_closed = booking_closed;
-        this.booking_active = booking_active;
+        this.bookingClosed = bookingClosed;
+        this.bookingActive = bookingActive;
     }
 
     public int getBooking_id() {
@@ -133,20 +133,20 @@ public class Booking {
         this.context = context;
     }
 
-    public int getBooking_closed() {
-        return booking_closed;
+    public int getBookingClosed() {
+        return bookingClosed;
     }
 
-    public void setBooking_closed(int booking_closed) {
-        this.booking_closed = booking_closed;
+    public void setBookingClosed(int bookingClosed) {
+        this.bookingClosed = bookingClosed;
     }
 
-    public int getBooking_active() {
-        return booking_active;
+    public int getBookingActive() {
+        return bookingActive;
     }
 
-    public void setBooking_active(int booking_active) {
-        this.booking_active = booking_active;
+    public void setBookingActive(int bookingActive) {
+        this.bookingActive = bookingActive;
     }
 
     @Override
@@ -163,8 +163,8 @@ public class Booking {
                 ", phone='" + phone + '\'' +
                 ", mail='" + mail + '\'' +
                 ", context='" + context + '\'' +
-                ", booking_closed=" + booking_closed +
-                ", booking_active=" + booking_active +
+                ", bookingClosed=" + bookingClosed +
+                ", bookingActive=" + bookingActive +
                 '}';
     }
 }

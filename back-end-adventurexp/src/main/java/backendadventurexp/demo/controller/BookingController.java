@@ -29,6 +29,13 @@ public class BookingController {
         return bookingList;
     }
 
+    @GetMapping("/select/remove/booking/{booking_closed}")
+    public List removeBooking(@PathVariable int booking_closed){
+        List<Booking> bookingRemove = bookingRepository.findAllByBookingClosed(booking_closed);
+
+        return  bookingRemove;
+    }
+
 
     @PostMapping(value="/insert/booking", consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
