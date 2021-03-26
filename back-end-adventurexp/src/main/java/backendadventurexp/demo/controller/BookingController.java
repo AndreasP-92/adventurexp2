@@ -1,7 +1,6 @@
 package backendadventurexp.demo.controller;
 
 import backendadventurexp.demo.model.Booking;
-import backendadventurexp.demo.model.Users;
 import backendadventurexp.demo.repository.BookingRepository;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
@@ -56,15 +55,6 @@ public class BookingController {
         return bookingList;
     }
 
-//    =======  SELECT ALL CLOSED BOOKINGS =====
-
-//    @GetMapping("/select/closed/booking")
-//    public List searchClosedBookingWMail() {
-//        List<Booking> bookingRemove = bookingRepository.findAllByBookingClosed(1);
-//
-//        return bookingRemove;
-//    }
-
     //    =======  SELECT ALL CLOSED BOOKINGS WITH MAIL =====
 
     @GetMapping("/select/closed/booking/activity/{activity}")
@@ -93,14 +83,6 @@ public class BookingController {
         return bookingRemove;
     }
 
-////    =======  SELECT ALL ACTIVE BOOKINGS =====
-//
-//    @GetMapping("/select/active/booking")
-//    public List findAllBookingsActive() {
-//        List<Booking> bookingActive = bookingRepository.findAllByBookingActive(0);
-//
-//        return bookingActive;
-//    }
 
 //    ==================================================== POST BOOKING ================================================
 
@@ -113,23 +95,6 @@ public class BookingController {
 
         return bookingRepository.save(booking);
     }
-
-    //     === UPDATE ONE BOOKING ===
-//    @PostMapping(value = "/update/booking", consumes = "application/json")
-//    @ResponseStatus(HttpStatus.OK)
-//    public void updateBooking(@RequestBody Booking booking) {
-//        System.out.println("BOOKING ==="+booking);
-//        Booking oneBooking = bookingRepository.findByBookingId(booking.getBookingId());
-////        oneBooking.setBookingClosed(booking.getBookingActive());
-//        if(oneBooking.getBookingActive() == 0){
-//            oneBooking.setBookingActive(1);
-//        }else{
-//            System.out.println("FEJL");
-//        }
-//        bookingRepository.save(oneBooking);
-//
-//    }
-//
 
     @ResponseStatus(code=HttpStatus.OK)
     @PostMapping("/close/booking/{id}")
@@ -152,17 +117,4 @@ public class BookingController {
             System.out.println("FEJL i DELETE =" + ex.getMessage());
         }
     }
-
-//    @ResponseStatus(code=HttpStatus.OK)
-//    @PostMapping("/delete/booking/{id}")
-//    public void deleteProfile(@PathVariable int id){
-//        System.out.println("ID=============="+id);
-//        try {
-//            bookingRepository.deleteById(id);
-//        } catch (EmptyResultDataAccessException ex) {
-//            System.out.println("FEJL i DELETE =" + ex.getMessage());
-//        }
-//    }
-
-
 }

@@ -5,6 +5,7 @@ import backendadventurexp.demo.model.Duration;
 import backendadventurexp.demo.repository.ActivityRepository;
 import backendadventurexp.demo.repository.DurationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -78,6 +79,17 @@ public class ActivityController {
 
         return activityRepository.save(activity);
 
+    }
+//    ==================================================== DELETE PROFILES ================================================
+
+    @ResponseStatus(code=HttpStatus.NO_CONTENT)
+    @DeleteMapping("/delete/activity/{id}")
+    public void deleteActivity(@PathVariable int id){
+        try {
+            activityRepository.deleteById(id);
+        } catch (EmptyResultDataAccessException ex) {
+            System.out.println("FEJL i DELETE =" + ex.getMessage());
+        }
     }
 
 }
