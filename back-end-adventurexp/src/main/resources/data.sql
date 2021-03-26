@@ -18,6 +18,9 @@ INSERT INTO duration (activity_name, duration) VALUES ('Black Death', 48);
 INSERT INTO duration (activity_name, duration) VALUES ('Black Death', 1);
 INSERT INTO duration (activity_name, duration) VALUES ('Black Death', 2);
 
+INSERT INTO schedule (mail,activity, starts, ends) VALUES('and@and', 'bowling', '2021-03-26', '2021-03-27');
+INSERT INTO schedule (mail, activity, starts, ends) VALUES('and@and', 'paintball','2021-03-28', '2021-03-28');
+
 -- INSERT INTO booking (booking_name, booking_phone, booking_datetime, booking_activity, booking_paid) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00);
 
 -- INSERT INTO profile (profile_firstname, profile_lastname, profile_phone) VALUES ('yu', 'yu', '1234');

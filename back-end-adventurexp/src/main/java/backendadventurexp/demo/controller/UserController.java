@@ -24,6 +24,17 @@ public class UserController {
 
 //    ==================================================== GET PROFILES ================================================
 
+    //     === SELECT ALL USERS ===
+    @GetMapping(value="/select/users")
+    public List<Users> getAllUsers(){
+
+        List <Users> user = userRepository.findAll();
+
+        System.out.println("USER FOUND==="+user);
+
+        return user;
+    }
+
     //     === SELECT BOOKING ===
     @GetMapping(value="/select/user/{mail}")
     public Users insertBooking(@PathVariable String mail){
