@@ -25,7 +25,7 @@ INSERT INTO duration (activity_name, duration) VALUES ('Black Death', 2);
 --
 -- INSERT INTO user (user_mail, user_password, user_enabled) VALUES ('dd@dd.dk', '123','1');
 
-INSERT INTO profile (firstname, lastname, phone, mail, password, role) VALUES ('firstname', 'lastname', 22, 'and@and', 'password', 'role');
+INSERT INTO profile (firstname, lastname, phone, mail, password, role) VALUES ('firstname', 'lastname', 22, 'and@and', 'password', 'ROLE_ADMIN');
 INSERT INTO auth (mail, role) VALUES ('and@and', 'ROLE_ADMIN');
 INSERT INTO users (enabled, mail, password, role) VALUES (1, 'and@and', '123', 'ROLE_ADMIN');
 
