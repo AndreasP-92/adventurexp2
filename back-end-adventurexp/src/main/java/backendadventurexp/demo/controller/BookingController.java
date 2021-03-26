@@ -71,7 +71,7 @@ public class BookingController {
     @PostMapping(value = "/update/booking", consumes = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public void updateBooking(@RequestBody Booking booking) {
-        System.out.println("BOOKING ==="+booking);
+        System.out.println("BOOKING ===" + booking);
         Booking oneBooking = bookingRepository.findByBookingId(booking.getBookingId());
 //        oneBooking.setBookingClosed(booking.getBookingActive());
         if(oneBooking.getBookingActive() == 0){
@@ -80,8 +80,6 @@ public class BookingController {
             System.out.println("FEJL");
         }
         bookingRepository.save(oneBooking);
+        }
 
     }
-
-
-}
