@@ -80,7 +80,7 @@ public class ActivityController {
         return activityRepository.save(activity);
 
     }
-//    ==================================================== DELETE PROFILES ================================================
+//    ==================================================== DELETE PROFILES =============================================
 
     @ResponseStatus(code=HttpStatus.NO_CONTENT)
     @DeleteMapping("/delete/activity/{id}")
