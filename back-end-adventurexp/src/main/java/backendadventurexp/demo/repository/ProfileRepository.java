@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface ProfileRepository extends JpaRepository<Profile, Integer> {
     List<Profile> findByMail(String mail);
+    Profile findById(int id);
 }
