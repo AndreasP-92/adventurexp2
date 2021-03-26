@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface AuthRepository extends JpaRepository<Auth, Long> {
     List<Auth> findAllByRole(String mail);
+    Auth findByMail(String mail);
 }
