@@ -50,14 +50,14 @@ public class UserController {
     }
 
     @GetMapping(value="/search/auth/{role}")
-    public List<Auth> searchAuth(@PathVariable String role){
+    public List<Users> searchAuth(@PathVariable String role){
         System.out.println(role);
 
-        List<Auth> auths = authRepository.findAllByRole(role);
+        List<Users> users = userRepository.findAllByRole(role);
 
-        System.out.println("USER FOUND==="+auths);
+        System.out.println("USER FOUND==="+users);
 
-        return auths;
+        return users;
     }
 
 //    ==================================================== POST PROFILES ================================================
@@ -97,8 +97,8 @@ public class UserController {
 
 //    ==================================================== DELETE PROFILE ================================================
 
-    @ResponseStatus(code=HttpStatus.NO_CONTENT)
-    @DeleteMapping("/delete/profile/{id}")
+    @ResponseStatus(code=HttpStatus.OK)
+    @PostMapping("/delete/profile/{id}")
     public void deleteProfile(@PathVariable int id){
         System.out.println("ID=============="+id);
         try {
