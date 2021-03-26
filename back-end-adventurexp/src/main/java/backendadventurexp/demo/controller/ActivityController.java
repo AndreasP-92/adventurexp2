@@ -92,4 +92,12 @@ public class ActivityController {
         }
     }
 
+    @PostMapping(value="/edit/activity", consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Activity editEvent(@RequestBody Activity activity){
+
+        return activityRepository.save(activity);
+
+    }
+
 }
