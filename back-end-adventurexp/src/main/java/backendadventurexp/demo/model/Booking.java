@@ -8,7 +8,6 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="booking_id")
     private int bookingId;
     private String activity;
     private String guests;

@@ -1,9 +1,7 @@
 package backendadventurexp.demo.controller;
 
 import backendadventurexp.demo.model.Booking;
-import backendadventurexp.demo.model.Users;
 import backendadventurexp.demo.repository.BookingRepository;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

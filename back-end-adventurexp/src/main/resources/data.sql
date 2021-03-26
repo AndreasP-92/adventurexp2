@@ -1,14 +1,22 @@
 INSERT INTO booking (firstname, phone, datetime, activity, paid, lastname, context,duration, mail, guests, booking_active, booking_closed) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00,'lorenzen', 'context', 'duration', 'and@and', 6, 0, 1);
-INSERT INTO booking (firstname, phone, datetime, activity, paid, lastname, context,duration, mail, guests, booking_active, booking_closed) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00,'lorenzen', 'context', 'duration', 'and@and', 6, 1, 0);
+INSERT INTO booking (firstname, phone, datetime, activity, paid, lastname, context,duration, mail, guests, booking_active, booking_closed) VALUES ('Jeffe', 22, '1990-01-01', 'bowling', 2500.00,'lorenzen', 'context', 'duration', 'and@and', 6, 1, 0);
 
-INSERT INTO booking (firstname, phone, datetime, activity, paid, lastname, context,duration, mail, guests, booking_active, booking_closed) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00,'lorenzen', 'context', 'duration', 'and@and', 6, 0, 1);
+INSERT INTO booking (firstname, phone, datetime, activity, paid, lastname, context,duration, mail, guests, booking_active, booking_closed) VALUES ('Jeffe', 22, '1990-01-01', 'paintball', 2500.00,'lorenzen', 'context', 'duration', 'and@and', 6, 0, 1);
 
 -- INSERT INTO booking (firstname, phone, datetime, activity, paid) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00);
 -- INSERT INTO activity (activity_name, activity_avail_start, activity_avail_end, activity_min_age, activity_group_size, activity_desc, activity_pic) VALUES ('Black Death', '22-22-22', '30-30-30', '18', '10', 'Description here', '/images/events/Gokart.jpg');
 -- INSERT INTO activity (activity_name, activity_avail_start, activity_avail_end, activity_min_age, activity_group_size, activity_desc, activity_pic) VALUES ('Bowling', '22-22-22', '30-30-30', '18', '10', 'Description here', '/images/events/Paintball.jpg');
 INSERT INTO activity (name, starts, ends, age, size, description, pic, price, practicalinfo, subheading) VALUES ('Bowling', '2021-01-23', '2021-04-01', '18', '10', 'Description here', '/images/events/Paintball.jpg', 1500.00, 'Medbring egen heldragt', 'Vi tager kegler');
+INSERT INTO activity (name, starts, ends, age, size, description, pic, price, practicalinfo, subheading) VALUES ('Black Death', '2021-01-23', '2021-04-01', '18', '10', 'Description here', '/images/events/Paintball.jpg', 1500.00, 'Medbring egen heldragt', 'Vi tager kegler');
+INSERT INTO activity (name, starts, ends, age, size, description, pic, price, practicalinfo, subheading) VALUES ('Paintball', '2021-01-23', '2021-04-01', '18', '10', 'Description here', '/images/events/Paintball.jpg', 1500.00, 'Medbring egen heldragt', 'Vi tager kegler');
+
 INSERT INTO duration (activity_name, duration) VALUES ('Bowling', 1);
 INSERT INTO duration (activity_name, duration) VALUES ('Bowling', 2);
+INSERT INTO duration (activity_name, duration) VALUES ('Black Death', 12);
+INSERT INTO duration (activity_name, duration) VALUES ('Black Death', 24);
+INSERT INTO duration (activity_name, duration) VALUES ('Black Death', 48);
+INSERT INTO duration (activity_name, duration) VALUES ('Black Death', 1);
+INSERT INTO duration (activity_name, duration) VALUES ('Black Death', 2);
 -- INSERT INTO booking (booking_name, booking_phone, booking_datetime, booking_activity, booking_paid) VALUES ('Jeffe', 22, '1990-01-01', 'black death', 2500.00);
 
 -- INSERT INTO profile (profile_firstname, profile_lastname, profile_phone) VALUES ('yu', 'yu', '1234');
