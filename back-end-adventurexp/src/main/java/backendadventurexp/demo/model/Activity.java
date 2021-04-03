@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 
 @Entity
@@ -12,10 +13,10 @@ public class Activity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
     public String name;
-    @JsonFormat(pattern = "yyyy M dd")
-    public Date starts;
-    @JsonFormat(pattern = "yyyy M dd")
-    public Date ends;
+    @JsonFormat(pattern = "yyyy, M, d")
+    public Timestamp starts;
+    @JsonFormat(pattern = "yyyy, M, d")
+    public Timestamp ends;
     public String age;
     public String size;
     public String description;
@@ -27,7 +28,7 @@ public class Activity {
     public Activity() {
     }
 
-    public Activity(String name, Date starts, Date ends, String age, String size, String description, String pic, String price, String practicalinfo, String subheading) {
+    public Activity(String name, Timestamp starts, Timestamp ends, String age, String size, String description, String pic, String price, String practicalinfo, String subheading) {
         this.name = name;
         this.starts = starts;
         this.ends = ends;
@@ -56,19 +57,19 @@ public class Activity {
         this.name = name;
     }
 
-    public Date getStarts() {
+    public Timestamp getStarts() {
         return starts;
     }
 
-    public void setStarts(Date starts) {
+    public void setStarts(Timestamp starts) {
         this.starts = starts;
     }
 
-    public Date getEnds() {
+    public Timestamp getEnds() {
         return ends;
     }
 
-    public void setEnds(Date ends) {
+    public void setEnds(Timestamp ends) {
         this.ends = ends;
     }
 

@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 public class Schedule {
@@ -16,15 +17,15 @@ public class Schedule {
     private int id;
     private String mail;
     private String activity;
-    @JsonFormat(pattern = "yyyy M dd")
-    private Date starts;
-    @JsonFormat(pattern = "yyyy M dd")
-    private Date ends;
+    @JsonFormat(pattern = "yyyy, M, d")
+    private Timestamp starts;
+    @JsonFormat(pattern = "yyyy, M, d")
+    private Timestamp ends;
 
     public Schedule() {
     }
 
-    public Schedule(String mail, String activity, Date starts, Date ends) {
+    public Schedule(String mail, String activity, Timestamp starts, Timestamp ends) {
         this.mail = mail;
         this.activity = activity;
         this.starts = starts;
@@ -55,19 +56,19 @@ public class Schedule {
         this.activity = activity;
     }
 
-    public Date getStarts() {
+    public Timestamp getStarts() {
         return starts;
     }
 
-    public void setStarts(Date starts) {
+    public void setStarts(Timestamp starts) {
         this.starts = starts;
     }
 
-    public Date getEnds() {
+    public Timestamp getEnds() {
         return ends;
     }
 
-    public void setEnds(Date ends) {
+    public void setEnds(Timestamp ends) {
         this.ends = ends;
     }
 
