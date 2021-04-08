@@ -19,9 +19,11 @@ public class Activity {
     public Timestamp ends;
     public String age;
     public String size;
+    @Lob
     public String description;
     public String pic;
     public String price;
+    @Lob
     public String practicalinfo;
     public String subheading;
 
